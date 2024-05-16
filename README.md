@@ -3,7 +3,7 @@ Sorting algorithm that can only use a small list of operations given by the subj
 
 The subject requires to write an performant sorting algorithm, using two stacks: a - containting the numbers given in the comand line arguments, and b - wich at the beggining of the function is empty.
 
-The list of give operations is :
+The list of given operations is :
 -sa (swap a): Swap the first 2 elements at the top of stack a.
 Do nothing if there is only one or no elements.
 -sb (swap b): Swap the first 2 elements at the top of stack b.
@@ -24,10 +24,10 @@ The last element becomes the first one.
 The last element becomes the first one.
 -rrr : rra and rrb at the same time.
 
-Every other operation on the stacks is forbidden.
+Every other kind of operation on the stacks is forbidden.
 
-My program is using two integer arrays for the operations, and the algorithm is basically looking at each number in the stack one by one looking for the best possible case where it uses the least ammount of moves possible.
-After the base cast if found it applies the case and then pushed the number accordingly.
+My program is using two integer arrays for the operations, and the algorithm is basically looking at each number in the stack one by one looking for the best possible case where the least ammount of moves possible will be used.
+After the base case is found it applies the case and then pushes the number accordingly.
 Please check out my code, and many thanks to A. Yigit Ogun, who wrote this amazing guide that helped me trough my push_swap journey : https://medium.com/@ayogun/push-swap-c1f5d2d41e97
 
 Thanks!
