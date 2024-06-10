@@ -31,3 +31,6 @@ After the base case is found it applies the case and then pushes the number acco
 Please check out my code, and many thanks to A. Yigit Ogun, who wrote this amazing guide that helped me trough my push_swap journey : https://medium.com/@ayogun/push-swap-c1f5d2d41e97
 
 Thanks!
+
+
+Subject : https://cdn.intra.42.fr/pdf/pdf/132222/en.subject.pdf
