@@ -1,36 +1,80 @@
 # push_swap
-Sorting algorithm that can only use a small list of operations given by the subject.
 
-The subject requires to write an performant sorting algorithm, using two stacks: a - containting the numbers given in the comand line arguments, and b - wich at the beggining of the function is empty.
+**push_swap** is an optimized sorting algorithm implemented in **C** that operates under strict constraints.  
+The program sorts a list of integers using only a predefined set of stack operations and two stacks (`a` and `b`).
 
-The list of given operations is :
--sa (swap a): Swap the first 2 elements at the top of stack a.
-Do nothing if there is only one or no elements.
--sb (swap b): Swap the first 2 elements at the top of stack b.
-Do nothing if there is only one or no elements.
--ss : sa and sb at the same time.
--pa (push a): Take the first element at the top of b and put it at the top of a.
-Do nothing if b is empty.
--pb (push b): Take the first element at the top of a and put it at the top of b.
-Do nothing if a is empty.
--ra (rotate a): Shift up all elements of stack a by 1.
-The first element becomes the last one.
--rb (rotate b): Shift up all elements of stack b by 1.
-The first element becomes the last one.
--rr : ra and rb at the same time.
--rra (reverse rotate a): Shift down all elements of stack a by 1.
-The last element becomes the first one.
--rrb (reverse rotate b): Shift down all elements of stack b by 1.
-The last element becomes the first one.
--rrr : rra and rrb at the same time.
+This project focuses on algorithm design, data structures, and performance optimization under limited instruction sets.
 
-Every other kind of operation on the stacks is forbidden.
+---
 
-My program is using two integer arrays for the operations, and the algorithm is basically looking at each number in the stack one by one looking for the best possible case where the least ammount of moves possible will be used.
-After the base case is found it applies the case and then pushes the number accordingly.
-Please check out my code, and many thanks to A. Yigit Ogun, who wrote this amazing guide that helped me trough my push_swap journey : https://medium.com/@ayogun/push-swap-c1f5d2d41e97
+## ⚙️ Rules & Operations
 
-Thanks!
+You must sort all integers from the command-line arguments using **only** the following operations:
 
+| Operation | Description |
+|------------|-------------|
+| `sa` | Swap the first 2 elements of stack **a** |
+| `sb` | Swap the first 2 elements of stack **b** |
+| `ss` | Perform `sa` and `sb` simultaneously |
+| `pa` | Push the top element of **b** onto **a** |
+| `pb` | Push the top element of **a** onto **b** |
+| `ra` | Rotate stack **a** upwards (first → last) |
+| `rb` | Rotate stack **b** upwards (first → last) |
+| `rr` | Perform `ra` and `rb` simultaneously |
+| `rra` | Reverse rotate stack **a** (last → first) |
+| `rrb` | Reverse rotate stack **b** (last → first) |
+| `rrr` | Perform `rra` and `rrb` simultaneously |
 
-Subject : https://cdn.intra.42.fr/pdf/pdf/132222/en.subject.pdf
+No other operations are allowed.
+
+---
+
+## 🧠 Algorithm Overview
+
+- Input numbers are stored in **stack a**, while **stack b** is initially empty.  
+- The algorithm analyzes the current state and determines the **least number of moves** needed to position the next smallest element correctly.  
+- It repeats this process until stack **a** is fully sorted.  
+- Efficiency and operation count are key — the goal is to minimize the total number of moves.
+
+My implementation uses two integer arrays for stack simulation and a rule-based strategy to select the most optimal operation sequence per element.
+
+---
+
+## 🧩 How to Run
+
+### 1. Build the program
+```bash
+make
+```
+2. Run with arguments
+
+```bash
+./push_swap 4 67 3 87 23
+```
+3. (Optional) Check with a visualizer
+
+You can test your output using community visualizers like [this one](https://github.com/o-reo/push_swap_visualizer).
+
+📊 Example
+```bash
+$ ./push_swap 3 2 1
+sa
+rra
+```
+The output lists the operations required to sort the stack.
+---
+🔬 Technical Details
+
+-Written in C (C99)
+
+-No use of standard library sorting functions
+
+-Algorithm optimized for time complexity and move count
+
+-Includes input validation and error handling
+
+---
+🙌 Credits
+
+Special thanks to A. Yigit Ogun for the excellent guide that inspired my approach:
+[🔗 Push Swap – Algorithm Design Guide](https://medium.com/@ayogun/push-swap-c1f5d2d41e97)
