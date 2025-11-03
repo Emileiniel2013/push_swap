@@ -62,6 +62,7 @@ sa
 rra
 ```
 The output lists the operations required to sort the stack.
+
 ---
 🔬 Technical Details
 
